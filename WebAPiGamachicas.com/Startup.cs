@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WebAPiGamachicas.com.BussinesLogical.Interface;
+using WebAPiGamachicas.com.BussinesLogical.Repository;
 
 namespace WebAPiGamachicas.com
 {
@@ -25,6 +27,7 @@ namespace WebAPiGamachicas.com
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<Iimagen, ImagenRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
