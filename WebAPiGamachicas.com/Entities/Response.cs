@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace WebAPiGamachicas.com.Entities
 {
-    public class Response
+    public class Response<Tparameters>
     {
       public  int idStatus { get; set; }
        public  string message { get; set; }
+        public Queue<Tparameters> parameter { get; set; }
     }
 }

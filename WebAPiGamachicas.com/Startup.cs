@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebAPiGamachicas.com.BussinesLogical.Interface;
 using WebAPiGamachicas.com.BussinesLogical.Repository;
+using WebAPiGamachicas.com.Config;
 
 namespace WebAPiGamachicas.com
 {
@@ -28,7 +29,9 @@ namespace WebAPiGamachicas.com
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<Iimagen, ImagenRepository>();
+            //services.AddTransient<AppDb>(_ => new AppDb(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.Configure<Configurationsetting>(Configuration.GetSection("Configuration"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

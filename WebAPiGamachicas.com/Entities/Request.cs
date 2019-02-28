@@ -10,6 +10,6 @@ namespace WebAPiGamachicas.com.Entities
 
          public string Entorno { get; set; }
         public string Token { get; set; }
-        public Tparameters parameter { get; set; }
+        public Queue<Tparameters> parameter { get; set; }
     }
 }
